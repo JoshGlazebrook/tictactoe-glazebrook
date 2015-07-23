@@ -1,0 +1,41 @@
+07-22 18:47:51 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "GAMES" not found; SQL statement:
+/* GameDAO.findAll */ SELECT * FROM games [42102-187]
+07-22 19:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Duplicate column name "ROW"; SQL statement:
+CREATE TABLE PUBLIC.plays (gameId UUID NOT NULL, playerId UUID NOT NULL, row INT NOT NULL, row INT NOT NULL, CONSTRAINT PK_PLAYS PRIMARY KEY (gameId, playerId, row, row)) [42121-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.Table.setColumns(Table.java:410)
+	at org.h2.table.TableBase.<init>(TableBase.java:45)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:72)
+	at org.h2.mvstore.db.MVTableEngine.createTable(MVTableEngine.java:129)
+	at org.h2.mvstore.db.MVTableEngine.createTable(MVTableEngine.java:41)
+	at org.h2.schema.Schema.createTable(Schema.java:582)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:137)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:78)
+	at org.h2.command.Command.executeUpdate(Command.java:254)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:184)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:314)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:55)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:122)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1227)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1210)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:550)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:43)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:73)
+	at liquibase.Liquibase.update(Liquibase.java:200)
+	at liquibase.Liquibase.update(Liquibase.java:181)
+	at liquibase.Liquibase.update(Liquibase.java:174)
+	at io.dropwizard.migrations.DbMigrateCommand.run(DbMigrateCommand.java:57)
+	at io.dropwizard.migrations.DbCommand.run(DbCommand.java:52)
+	at io.dropwizard.migrations.AbstractLiquibaseCommand.run(AbstractLiquibaseCommand.java:63)
+	at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:76)
+	at io.dropwizard.cli.Cli.run(Cli.java:70)
+	at io.dropwizard.Application.run(Application.java:73)
+	at com.glazebrook.tictactoe.TicTacToeApplication.main(TicTacToeApplication.java:18)
+07-22 19:47:35 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "                         INSERT INTO GAMES (ID) VALUES (?) RETURNING[*] * "; SQL statement:
+/* GameDAO.createGame */ INSERT INTO games (id) VALUES (?) RETURNING * [42000-187]

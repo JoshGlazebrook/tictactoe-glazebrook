@@ -1,0 +1,85 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 1
+      author: joshglazebrook
+      changes:
+        - createTable:
+            tableName: games
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: gameEnded
+                  type: boolean
+              - column:
+                  name: winningPlayerId
+                  type: UUID
+                  constraints:
+                    nullable: true
+              - column:
+                  name: lastPlayerId
+                  type: UUID
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+        id: 2
+        author: joshglazebrook
+        changes:
+          - createTable:
+              tableName: plays
+              columns:
+                - column:
+                    name: gameId
+                    type: UUID
+                    constraints:
+                      primaryKey: true
+                      nullable: false
+                - column:
+                    name: playerId
+                    type: UUID
+                    constraints:
+                      primaryKey: true
+                      nullable: false
+                - column:
+                    name: row
+                    type: int
+                    constraints:
+                      primaryKey: true
+                      nullable: true
+                - column:
+                    name: col
+                    type: int
+                    constraints:
+                      primaryKey: true
+                      nullable: true
+
+  - changeSet:
+          id: 3
+          author: joshglazebrook
+          changes:
+            - createTable:
+                tableName: players
+                columns:
+                  - column:
+                      name: id
+                      type: UUID
+                      constraints:
+                        primaryKey: true
+                        nullable: false
+                  - column:
+                      name: gameId
+                      type: UUID
+                      constraints:
+                        primaryKey: true
+                        nullable: false
+                  - column:
+                      name: name
+                      type: varchar(40)
+                      constraints:
+                        nullable: false
