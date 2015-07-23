@@ -1,0 +1,1 @@
+web: java -jar application/target/application-1.0.jar db status config.yml --migrations migrations.yml && java -jar application/target/application-1.0.jar server config.yml
