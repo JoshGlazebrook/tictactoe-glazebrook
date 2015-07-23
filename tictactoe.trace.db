@@ -39,3 +39,18 @@ CREATE TABLE PUBLIC.plays (gameId UUID NOT NULL, playerId UUID NOT NULL, row INT
 07-22 19:47:35 jdbc[12]: exception
 org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "                         INSERT INTO GAMES (ID) VALUES (?) RETURNING[*] * "; SQL statement:
 /* GameDAO.createGame */ INSERT INTO games (id) VALUES (?) RETURNING * [42000-187]
+07-22 21:23:00 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "NAME VARCHAR(40) NOT NULL": "'adriansdfsdfsdfkldsfskdlfjsdlkfjsdlkfsjdflksdjlksdfjlksdfjlsdkfjslkdfjsdlkfjsdklfjsdlkfsdjflskdfjsdlkfjdslkfsjdflksdfjsdlkfjsdl... (181)"; SQL statement:
+/* PlayerDAO.createPlayer */ INSERT INTO players (id, gameId, name) VALUES (?, ?, ?) [22001-187]
+07-23 01:00:33 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "NAME VARCHAR(40) NOT NULL": "'joshlhjhkljkhllkjjhlkjhkjjjkhlkjhkjhkjhlkjhkjhlkhlkjhjlkljhlkjhkljhkjhlkjhkjhkljhkljhkljhkljhkljhkljhkjhlkjh' (108)"; SQL statement:
+/* PlayerDAO.createPlayer */ INSERT INTO players (id, gameId, name) VALUES (?, ?, ?) [22001-187]
+07-23 01:01:32 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "NAME VARCHAR(40) NOT NULL": "'joshlhjhkljkhllkjjhlkjhkjjjkhlkjhkjhkjhlkjhkjhlkhlkjhjlkljhlkjhkljhkjhlkjhkjhkljhkljhkljhkljhkljhkljhkjhlkjh' (108)"; SQL statement:
+/* PlayerDAO.createPlayer */ INSERT INTO players (id, gameId, name) VALUES (?, ?, ?) [22001-187]
+07-23 01:05:17 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Value too long for column "NAME VARCHAR(40) NOT NULL": "'joshlhjhkljkhllkjjhlkjhkjjjkhlkjhkjhkjhlkjhkjhlkhlkjhjlkljhlkjhkljhkjhlkjhkjhkljhkljhkljhkljhkljhkljhkjhlkjh' (108)"; SQL statement:
+/* PlayerDAO.createPlayer */ INSERT INTO players (id, gameId, name) VALUES (?, ?, ?) [22001-187]
+07-23 02:10:05 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "BOARD" not found; SQL statement:
+/* PlayDAO.createBoard */ INSERT INTO board (gameId, playerId, row, col) VALUES (?, ?, ?, ?) [42102-187]

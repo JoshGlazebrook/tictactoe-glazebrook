@@ -1,11 +1,12 @@
 package com.glazebrook.tictactoe;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.hibernate.validator.constraints.Length;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.UUID;
 
 /**
@@ -13,15 +14,17 @@ import java.util.UUID;
  */
 public class Player {
 
+    @JsonProperty
     @NotNull
     private UUID id;
 
+    @JsonProperty
     @NotNull
-    private UUID gameID;
+    private UUID gameId;
 
+    @JsonProperty
     @NotNull
-    @Min(5)
-    @Max(40)
+    @Size(min=1, max=40)
     private String name;
 
 
@@ -29,23 +32,23 @@ public class Player {
 
     }
 
-    public Player(UUID id, UUID gameID, String name) {
+    public Player(UUID id, UUID gameId, String name) {
         this.id = id;
-        this.gameID = gameID;
+        this.gameId = gameId;
         this.name = name;
     }
 
-    @JsonProperty
+
     public UUID getId() {
         return id;
     }
 
-    @JsonProperty
-    public UUID getGameID() {
-        return gameID;
+
+    public UUID getGameId() {
+        return gameId;
     }
 
-    @JsonProperty
+
     public String getName() {
         return name;
     }

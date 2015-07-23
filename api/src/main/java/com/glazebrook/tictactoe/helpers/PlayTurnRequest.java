@@ -1,63 +1,56 @@
-package com.glazebrook.tictactoe;
-
-
-import com.fasterxml.jackson.annotation.JsonProperty;
+package com.glazebrook.tictactoe.helpers;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
-public class Play {
+public class PlayTurnRequest {
 
-    @JsonProperty
     @NotNull
-    private UUID gameId;
-
-    @JsonProperty
     private UUID playerId;
 
-    @JsonProperty
+    @NotNull
     @Min(0)
     @Max(2)
-    @NotNull
     private int row;
 
-    @JsonProperty
+    @NotNull
     @Min(0)
     @Max(2)
-    @NotNull
     private int col;
 
-
-    public Play() {
+    public PlayTurnRequest() {
 
     }
 
-    public Play(UUID gameId, UUID playerId, int row, int col) {
-        this.gameId = gameId;
+    public PlayTurnRequest(UUID playerId, int row, int col) {
         this.playerId = playerId;
         this.row = row;
         this.col = col;
     }
 
-
-    public UUID getGameId() {
-        return gameId;
-    }
-
-
     public UUID getPlayerId() {
         return playerId;
     }
 
+    public void setPlayerId(UUID playerId) {
+        this.playerId = playerId;
+    }
 
     public int getRow() {
         return row;
     }
 
+    public void setRow(int row) {
+        this.row = row;
+    }
 
     public int getCol() {
         return col;
+    }
+
+    public void setCol(int col) {
+        this.col = col;
     }
 }

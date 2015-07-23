@@ -1,8 +1,11 @@
 package com.glazebrook.tictactoe;
 
 import com.glazebrook.tictactoe.db.GameDAO;
+import com.glazebrook.tictactoe.db.PlayDAO;
+import com.glazebrook.tictactoe.db.PlayerDAO;
 import com.glazebrook.tictactoe.resources.GameResource;
 import com.glazebrook.tictactoe.resources.TestResource;
+import com.glazebrook.tictactoe.resources.exceptions.WebApplicationExceptionMapper;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.jdbi.DBIFactory;
@@ -32,14 +35,22 @@ public class TicTacToeApplication extends Application<TicTacToeConfiguration> {
     @Override
     public void run(TicTacToeConfiguration ticTacToeConfiguration, Environment environment) throws Exception {
 
+        environment.jersey().register(new WebApplicationExceptionMapper());
+
+
         final DBIFactory factory = new DBIFactory();
         final DBI jdbi = factory.build(environment, ticTacToeConfiguration.getDataSourceFactory(), "h2");
 
 
         final GameDAO gameDAO = jdbi.onDemand(GameDAO.class);
-        final GameController gameController = new GameController(gameDAO);
+        final PlayerDAO playerDAO = jdbi.onDemand(PlayerDAO.class);
+        final PlayDAO playDAO = jdbi.onDemand(PlayDAO.class);
+
+        final GameController gameController = new GameController(gameDAO, playerDAO, playDAO);
 
         environment.jersey().register(new GameResource(gameController));
         environment.jersey().register(new TestResource());
+
+
     }
 }
