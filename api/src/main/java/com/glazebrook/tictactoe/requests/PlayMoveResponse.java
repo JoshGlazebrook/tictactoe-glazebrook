@@ -1,11 +1,11 @@
-package com.glazebrook.tictactoe.helpers;
+package com.glazebrook.tictactoe.requests;
 
-import com.glazebrook.tictactoe.Play;
+import com.glazebrook.tictactoe.db.Move;
 
 import java.util.List;
 import java.util.UUID;
 
-public class PlayTurnResponse {
+public class PlayMoveResponse {
 
     private UUID gameId;
 
@@ -13,9 +13,9 @@ public class PlayTurnResponse {
 
     private UUID gameWinner;
 
-    private List<Play> gameBoard;
+    private List<Move> gameBoard;
 
-    public PlayTurnResponse(UUID gameId, boolean gameEnded, UUID gameWinner, List<Play> gameBoard) {
+    public PlayMoveResponse(UUID gameId, boolean gameEnded, UUID gameWinner, List<Move> gameBoard) {
 
         this.gameId = gameId;
         this.gameEnded = gameEnded;
@@ -23,15 +23,15 @@ public class PlayTurnResponse {
         this.gameBoard = gameBoard;
     }
 
-    public List<Play> getGameBoard() {
+    public List<Move> getGameBoard() {
         return gameBoard;
     }
 
-    public void setGameBoard(List<Play> gameBoard) {
+    public void setGameBoard(List<Move> gameBoard) {
         this.gameBoard = gameBoard;
     }
 
-    public PlayTurnResponse() {
+    public PlayMoveResponse() {
 
     }
 

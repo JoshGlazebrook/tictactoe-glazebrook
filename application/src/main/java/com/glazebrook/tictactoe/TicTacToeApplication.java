@@ -1,10 +1,9 @@
 package com.glazebrook.tictactoe;
 
 import com.glazebrook.tictactoe.db.GameDAO;
-import com.glazebrook.tictactoe.db.PlayDAO;
+import com.glazebrook.tictactoe.db.MoveDAO;
 import com.glazebrook.tictactoe.db.PlayerDAO;
 import com.glazebrook.tictactoe.resources.GameResource;
-import com.glazebrook.tictactoe.resources.TestResource;
 import com.glazebrook.tictactoe.resources.exceptions.WebApplicationExceptionMapper;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
@@ -44,12 +43,11 @@ public class TicTacToeApplication extends Application<TicTacToeConfiguration> {
 
         final GameDAO gameDAO = jdbi.onDemand(GameDAO.class);
         final PlayerDAO playerDAO = jdbi.onDemand(PlayerDAO.class);
-        final PlayDAO playDAO = jdbi.onDemand(PlayDAO.class);
+        final MoveDAO moveDAO = jdbi.onDemand(MoveDAO.class);
 
-        final GameController gameController = new GameController(gameDAO, playerDAO, playDAO);
+        final GameController gameController = new GameController(gameDAO, playerDAO, moveDAO);
 
         environment.jersey().register(new GameResource(gameController));
-        environment.jersey().register(new TestResource());
 
 
     }

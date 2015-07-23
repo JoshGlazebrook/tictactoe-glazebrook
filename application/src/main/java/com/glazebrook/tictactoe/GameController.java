@@ -1,12 +1,10 @@
 package com.glazebrook.tictactoe;
 
-import com.glazebrook.tictactoe.db.GameDAO;
-import com.glazebrook.tictactoe.db.PlayDAO;
-import com.glazebrook.tictactoe.db.PlayerDAO;
-import com.glazebrook.tictactoe.helpers.CreateGameResponse;
-import com.glazebrook.tictactoe.helpers.JoinGameResponse;
-import com.glazebrook.tictactoe.helpers.PlayTurnRequest;
-import com.glazebrook.tictactoe.helpers.PlayTurnResponse;
+import com.glazebrook.tictactoe.db.*;
+import com.glazebrook.tictactoe.requests.CreateGameResponse;
+import com.glazebrook.tictactoe.requests.JoinGameResponse;
+import com.glazebrook.tictactoe.requests.PlayMoveRequest;
+import com.glazebrook.tictactoe.requests.PlayMoveResponse;
 import org.skife.jdbi.v2.sqlobject.Transaction;
 
 import javax.ws.rs.WebApplicationException;
@@ -21,12 +19,12 @@ public class GameController {
 
     private final PlayerDAO playerDAO;
 
-    private final PlayDAO playDAO;
+    private final MoveDAO moveDAO;
 
-    public GameController(final GameDAO gameDAO, final PlayerDAO playerDAO, final PlayDAO playDAO) {
+    public GameController(final GameDAO gameDAO, final PlayerDAO playerDAO, final MoveDAO moveDAO) {
         this.gameDAO = gameDAO;
         this.playerDAO = playerDAO;
-        this.playDAO = playDAO;
+        this.moveDAO = moveDAO;
     }
 
 
@@ -96,8 +94,12 @@ public class GameController {
 
     }
 
+    public List<Move> getMoves(UUID gameId) {
+        return moveDAO.findMoves(gameId);
+    }
+
     @Transaction
-    public PlayTurnResponse playTurn(UUID gameId, PlayTurnRequest options) {
+    public PlayMoveResponse playMove(UUID gameId, PlayMoveRequest options) {
         final Game game = gameDAO.findGameById(gameId);
 
         // Game doesn't exist?
@@ -130,20 +132,20 @@ public class GameController {
             throw new WebApplicationException("It is not your turn", Response.Status.FORBIDDEN);
 
         // Get board state for this game.
-        final List<Play> plays = playDAO.findPlays(gameId);
+        final List<Move> plays = moveDAO.findMoves(gameId);
 
         // Is this spot free?
-        for(Play p : plays) {
+        for(Move p : plays) {
             if (p.getCol() == options.getCol() && p.getRow() == options.getRow())
                 throw new WebApplicationException("This spot has already been played on", Response.Status.FORBIDDEN);
         }
 
         // Mark this spot for player.
-        if (playDAO.createBoard(gameId, options.getPlayerId(), options.getRow(), options.getCol()) != 1)
+        if (moveDAO.createMove(gameId, options.getPlayerId(), options.getRow(), options.getCol()) != 1)
             throw new WebApplicationException("Unable to save play state", Response.Status.INTERNAL_SERVER_ERROR);
 
         // Add new play to existing list of plays for this game.
-        plays.add(new Play(gameId, options.getPlayerId(), options.getRow(), options.getCol()));
+        plays.add(new Move(gameId, options.getPlayerId(), options.getRow(), options.getCol()));
 
         // Update last player
         // TODO: this could be moved down for updating isgameover as well in one go
@@ -151,13 +153,20 @@ public class GameController {
 
         // TODO: check for a win...
 
-        return new PlayTurnResponse(gameId, false, null, plays);
+        // TODO: perhaps not return board on this endpoint?  rename play to turn?
+
+        return new PlayMoveResponse(gameId, false, null, plays);
     }
 
 
 
     public List<Game> getAllGames() {
         return gameDAO.findAll();
+    }
+
+
+    private UUID getWinner(List<Move> board) {
+        return null;
     }
 
 }

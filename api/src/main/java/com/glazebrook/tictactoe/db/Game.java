@@ -1,13 +1,8 @@
-package com.glazebrook.tictactoe;
+package com.glazebrook.tictactoe.db;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.skife.jdbi.v2.StatementContext;
-import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
-import org.skife.jdbi.v2.tweak.ResultSetMapper;
 
 import javax.validation.constraints.NotNull;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.UUID;
 

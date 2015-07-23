@@ -83,3 +83,10 @@ databaseChangeLog:
                       type: varchar(40)
                       constraints:
                         nullable: false
+  - changeSet:
+          id: 4
+          author: joshlgazebrook
+          changes:
+            - renameTable:
+                oldTableName: plays
+                newTableName: moves

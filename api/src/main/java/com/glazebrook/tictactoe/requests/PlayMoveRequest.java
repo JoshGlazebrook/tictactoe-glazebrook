@@ -1,11 +1,11 @@
-package com.glazebrook.tictactoe.helpers;
+package com.glazebrook.tictactoe.requests;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
-public class PlayTurnRequest {
+public class PlayMoveRequest {
 
     @NotNull
     private UUID playerId;
@@ -20,11 +20,11 @@ public class PlayTurnRequest {
     @Max(2)
     private int col;
 
-    public PlayTurnRequest() {
+    public PlayMoveRequest() {
 
     }
 
-    public PlayTurnRequest(UUID playerId, int row, int col) {
+    public PlayMoveRequest(UUID playerId, int row, int col) {
         this.playerId = playerId;
         this.row = row;
         this.col = col;

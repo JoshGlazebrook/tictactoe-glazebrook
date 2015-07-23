@@ -1,4 +1,4 @@
-package com.glazebrook.tictactoe.helpers;
+package com.glazebrook.tictactoe.requests;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

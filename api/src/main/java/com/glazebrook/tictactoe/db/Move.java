@@ -1,4 +1,4 @@
-package com.glazebrook.tictactoe;
+package com.glazebrook.tictactoe.db;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,7 +8,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
-public class Play {
+public class Move {
 
     @JsonProperty
     @NotNull
@@ -30,11 +30,11 @@ public class Play {
     private int col;
 
 
-    public Play() {
+    public Move() {
 
     }
 
-    public Play(UUID gameId, UUID playerId, int row, int col) {
+    public Move(UUID gameId, UUID playerId, int row, int col) {
         this.gameId = gameId;
         this.playerId = playerId;
         this.row = row;

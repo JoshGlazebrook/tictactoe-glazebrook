@@ -1,8 +1,7 @@
 package com.glazebrook.tictactoe.resources;
 
 
-import com.glazebrook.tictactoe.helpers.*;
-import com.glazebrook.tictactoe.Game;
+import com.glazebrook.tictactoe.requests.*;
 import com.glazebrook.tictactoe.GameController;
 
 import javax.validation.Valid;
@@ -21,6 +20,12 @@ public class GameResource {
         gameController = controller;
     }
 
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response createGame(@Valid CreateGameRequest options) {
+        return Response.ok(gameController.createGame(options.getName())).build();
+    }
+
     @GET
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -28,28 +33,24 @@ public class GameResource {
         return Response.ok(gameController.getGame(id)).build();
     }
 
-    @PUT
+
+    @POST
     @Path("/{id}")
-    public Response playTurn(@PathParam("id") UUID id, @Valid PlayTurnRequest options) {
-        return Response.ok(gameController.playTurn(id, options)).build();
-    }
-
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response createGame(@Valid CreateGameRequest options) {
-        return Response.ok(gameController.createGame(options.getName())).build();
-    }
-
-    @POST
-    @Path("/{id}/join")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response joinGame(@PathParam("id") UUID id, @Valid JoinGameRequest options) {
         return Response.ok(gameController.joinGame(id, options.getName())).build();
     }
 
-    @GET
-    @Path("/all")
-    public Response getGames() {
-        return Response.ok(gameController.getAllGames()).build();
+    @POST
+    @Path("/{id}/move")
+    public Response playTurn(@PathParam("id") UUID id, @Valid PlayMoveRequest options) {
+        return Response.ok(gameController.playMove(id, options)).build();
     }
+
+    @GET
+    @Path("/{id}/moves")
+    public Response getMoves(@PathParam("id") UUID id) {
+        return Response.ok(gameController.getMoves(id)).build();
+    }
+
 }

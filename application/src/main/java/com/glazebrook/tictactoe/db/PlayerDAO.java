@@ -1,8 +1,5 @@
 package com.glazebrook.tictactoe.db;
 
-import com.glazebrook.tictactoe.Game;
-import com.glazebrook.tictactoe.Play;
-import com.glazebrook.tictactoe.Player;
 import org.skife.jdbi.v2.StatementContext;
 import org.skife.jdbi.v2.sqlobject.Bind;
 import org.skife.jdbi.v2.sqlobject.SqlQuery;

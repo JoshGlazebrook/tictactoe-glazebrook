@@ -2,28 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c3de716-fedc-4eb7-8e99-070561c1d725" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/CreateGameRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/CreateGameResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/JoinGameRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/JoinGameResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/PlayTurnRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/PlayTurnResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/resources/exceptions/WebApplicationExceptionMapper.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/CreateGameResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/resources/exceptions/UnableToCreateGameException.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/db/Move.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/PlayMoveRequest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/PlayMoveResponse.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/resources/TestResource.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Game.java" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/db/Game.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Play.java" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/db/Move.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Player.java" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/db/Player.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/CreateGameRequest.java" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/CreateGameRequest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/CreateGameResponse.java" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/CreateGameResponse.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/JoinGameRequest.java" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/JoinGameRequest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/JoinGameResponse.java" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/JoinGameResponse.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/PlayDAO.java" afterPath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/MoveDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tictactoe.mv.db" afterPath="$PROJECT_DIR$/tictactoe.mv.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Game.java" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/GameController.java" afterPath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/GameController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/GameDAO.java" afterPath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/GameDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/resources/GameResource.java" afterPath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/resources/GameResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Play.java" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Play.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/PlayDAO.java" afterPath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/PlayDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Player.java" afterPath="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/PlayerDAO.java" afterPath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/PlayerDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/TicTacToeApplication.java" afterPath="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/TicTacToeApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.yml" afterPath="$PROJECT_DIR$/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tictactoe.trace.db" afterPath="$PROJECT_DIR$/tictactoe.trace.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/migrations.yml" afterPath="$PROJECT_DIR$/migrations.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tictactoe-glazebrook.iws" />
@@ -59,67 +56,70 @@
         <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/resources/GameResource.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+              <caret line="52" column="63" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#503#504#0" expanded="true" />
-                <element signature="e#546#547#0" expanded="true" />
-                <element signature="e#673#674#0" expanded="true" />
-                <element signature="e#743#744#0" expanded="true" />
-                <element signature="e#1466#1467#0" expanded="true" />
-                <element signature="e#1538#1539#0" expanded="true" />
+                <element signature="e#466#467#0" expanded="true" />
+                <element signature="e#509#510#0" expanded="true" />
+                <element signature="e#844#845#0" expanded="true" />
+                <element signature="e#914#915#0" expanded="true" />
+                <element signature="e#1462#1463#0" expanded="true" />
+                <element signature="e#1533#1534#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayTurnResponse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/PlayTurnResponse.java">
+      <file leaf-file-name="TicTacToeApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/TicTacToeApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#571#572#0" expanded="true" />
-                <element signature="e#603#604#0" expanded="true" />
-                <element signature="e#657#658#0" expanded="true" />
-                <element signature="e#699#700#0" expanded="true" />
-                <element signature="e#770#771#0" expanded="true" />
-                <element signature="e#799#800#0" expanded="true" />
-                <element signature="e#841#842#0" expanded="true" />
-                <element signature="e#877#878#0" expanded="true" />
-                <element signature="e#913#914#0" expanded="true" />
-                <element signature="e#945#946#0" expanded="true" />
-                <element signature="e#996#997#0" expanded="true" />
-                <element signature="e#1038#1039#0" expanded="true" />
-                <element signature="e#1073#1074#0" expanded="true" />
-                <element signature="e#1106#1107#0" expanded="true" />
-                <element signature="e#1156#1157#0" expanded="true" />
-                <element signature="e#1200#1201#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayTurnRequest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/PlayTurnRequest.java">
+      <file leaf-file-name="migrations.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/migrations.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <caret line="82" column="37" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
+              <folding>
+                <marker date="1437684756000" expanded="true" signature="0:2650" placeholder="databaseChangeLog:" />
+                <marker date="1437684756000" expanded="true" signature="2473:2650" placeholder="changeSet:" />
+                <marker date="1437684756000" expanded="true" signature="2543:2650" placeholder="changes:" />
+                <marker date="1437684756000" expanded="true" signature="2566:2650" placeholder="renameTable:" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayMoveResponse.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/PlayMoveResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#605#606#0" expanded="true" />
-                <element signature="e#636#637#0" expanded="true" />
-                <element signature="e#682#683#0" expanded="true" />
-                <element signature="e#722#723#0" expanded="true" />
-                <element signature="e#749#750#0" expanded="true" />
-                <element signature="e#775#776#0" expanded="true" />
-                <element signature="e#810#811#0" expanded="true" />
-                <element signature="e#840#841#0" expanded="true" />
-                <element signature="e#867#868#0" expanded="true" />
-                <element signature="e#893#894#0" expanded="true" />
-                <element signature="e#928#929#0" expanded="true" />
-                <element signature="e#958#959#0" expanded="true" />
+                <element signature="e#1160#1161#0" expanded="true" />
+                <element signature="e#1204#1205#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayMoveRequest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/PlayMoveRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+              <folding>
+                <marker date="1437685176000" expanded="true" signature="51:193" placeholder="..." />
+                <marker date="1437685176000" expanded="true" signature="415:423" placeholder="{...}" />
+                <marker date="1437685176000" expanded="true" signature="485:574" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -128,23 +128,44 @@
       <file leaf-file-name="GameController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6832298">
-              <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.6501035">
+              <caret line="108" column="36" selection-start-line="108" selection-start-column="36" selection-end-line="108" selection-end-column="36" />
               <folding>
-                <element signature="e#5576#5577#0" expanded="true" />
-                <element signature="e#5616#5617#0" expanded="true" />
+                <element signature="e#3074#3075#0" expanded="true" />
+                <element signature="e#3122#3123#0" expanded="true" />
+                <element signature="e#5750#5751#0" expanded="true" />
+                <element signature="e#5777#5778#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Game.java">
+        <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/db/Game.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+              <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Move.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/db/Move.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+              <folding>
+                <element signature="e#764#765#0" expanded="true" />
+                <element signature="e#793#794#0" expanded="true" />
+                <element signature="e#827#828#0" expanded="true" />
+                <element signature="e#858#859#0" expanded="true" />
+                <element signature="e#886#887#0" expanded="true" />
+                <element signature="e#912#913#0" expanded="true" />
+                <element signature="e#940#941#0" expanded="true" />
+                <element signature="e#966#967#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,54 +175,20 @@
         <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/GameDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+              <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/PlayDAO.java">
+      <file leaf-file-name="MoveDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/MoveDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateGameRequest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/CreateGameRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JoinGameResponse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/JoinGameResponse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -234,7 +221,6 @@
         <option value="$PROJECT_DIR$/application/src/main/resources/migrations.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/migrations.xml" />
         <option value="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/TicTacToeConfiguration.java" />
-        <option value="$PROJECT_DIR$/migrations.yml" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/CreateGameResponse.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/CreateGameRequest.java" />
@@ -243,17 +229,22 @@
         <option value="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/JoinGameResponse.java" />
         <option value="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/GameDAO.java" />
         <option value="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/resources/exceptions/UnableToCreateGameException.java" />
-        <option value="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/TicTacToeApplication.java" />
         <option value="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/resources/exceptions/WebApplicationExceptionMapper.java" />
         <option value="$PROJECT_DIR$/config.yml" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Player.java" />
-        <option value="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Play.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/CreateGameRequest.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/JoinGameRequest.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/PlayTurnRequest.java" />
-        <option value="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/resources/GameResource.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/PlayMoveRequest.java" />
         <option value="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/PlayTurnResponse.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/PlayMoveResponse.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Play.java" />
+        <option value="$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Move.java" />
         <option value="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/PlayDAO.java" />
+        <option value="$PROJECT_DIR$/migrations.yml" />
+        <option value="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/TicTacToeApplication.java" />
+        <option value="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/MoveDAO.java" />
+        <option value="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/resources/GameResource.java" />
         <option value="$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/GameController.java" />
       </list>
     </option>
@@ -278,8 +269,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="422" />
-    <option name="y" value="109" />
+    <option name="x" value="100" />
+    <option name="y" value="46" />
     <option name="width" value="1424" />
     <option name="height" value="857" />
   </component>
@@ -307,8 +298,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -475,44 +464,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exceptions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tictactoe-glazebrook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tictactoe-glazebrook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tictactoe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -600,6 +551,10 @@
               <option name="myItemId" value="tictactoe" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="requests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -631,12 +586,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
+              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -927,6 +884,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
@@ -955,43 +918,44 @@
       <created>1437612556449</created>
       <option name="number" value="Default" />
       <updated>1437612556449</updated>
-      <workItem from="1437612559874" duration="19263000" />
+      <workItem from="1437612559874" duration="20223000" />
+      <workItem from="1437682319146" duration="1843000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19263000" />
+    <option name="totallyTimeSpent" value="22066000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="422" y="109" width="1424" height="857" extended-state="0" />
+    <frame x="100" y="46" width="1424" height="857" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939634" sideWeight="0.497191" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939634" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939634" sideWeight="0.497191" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39895013" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939634" sideWeight="0.502809" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.50873363" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939634" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935393" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939634" sideWeight="0.502809" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.50873363" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31811798" sideWeight="0.49126637" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31811798" sideWeight="0.49126637" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32939634" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935393" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939634" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1009,11 +973,119 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/resources/GameResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#466#467#0" expanded="true" />
+            <element signature="e#509#510#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="true" />
+            <element signature="e#914#915#0" expanded="true" />
+            <element signature="e#1462#1463#0" expanded="true" />
+            <element signature="e#1533#1534#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/PlayMoveResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1160#1161#0" expanded="true" />
+            <element signature="e#1204#1205#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/PlayMoveRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <marker date="1437685176000" expanded="true" signature="51:193" placeholder="..." />
+            <marker date="1437685176000" expanded="true" signature="415:423" placeholder="{...}" />
+            <marker date="1437685176000" expanded="true" signature="485:574" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#3074#3075#0" expanded="true" />
+            <element signature="e#3122#3123#0" expanded="true" />
+            <element signature="e#5750#5751#0" expanded="true" />
+            <element signature="e#5777#5778#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/db/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/GameDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/MoveDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/CreateGameRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/JoinGameResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/db/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/application.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1037,7 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1053,33 +1124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#382#383#0" expanded="false" />
-            <element signature="e#413#414#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/migrations.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding>
-            <marker date="1437618625000" expanded="true" signature="-1:-1" placeholder="databaseChangeLog:" />
-            <marker date="1437618625000" expanded="true" signature="-1:-1" placeholder="changeSet:" />
-            <marker date="1437618625000" expanded="true" signature="-1:-1" placeholder="changes:" />
-            <marker date="1437618625000" expanded="true" signature="-1:-1" placeholder="createTable:" />
-            <marker date="1437618625000" expanded="true" signature="-1:-1" placeholder="columns:" />
-            <marker date="1437618625000" expanded="true" signature="-1:-1" placeholder="column:" />
-            <marker date="1437618625000" expanded="true" signature="-1:-1" placeholder="constraints:" />
-            <marker date="1437618625000" expanded="true" signature="-1:-1" placeholder="changeSet:" />
-            <marker date="1437618625000" expanded="true" signature="-1:-1" placeholder="changes:" />
-            <marker date="1437618625000" expanded="true" signature="-1:-1" placeholder="createTable:" />
-            <marker date="1437618625000" expanded="true" signature="-1:-1" placeholder="columns:" />
-            <marker date="1437618625000" expanded="true" signature="-1:-1" placeholder="column:" />
-            <marker date="1437618625000" expanded="true" signature="-1:-1" placeholder="constraints:" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1103,7 +1147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22332506">
           <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1111,7 +1154,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="57" column="13" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1123,29 +1165,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/resources/TestResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/TicTacToeApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/resources/exceptions/WebApplicationExceptionMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1157,15 +1180,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Play.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/CreateGameResponse.java">
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/CreateGameResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
@@ -1175,7 +1190,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/JoinGameRequest.java">
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/JoinGameRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
@@ -1185,7 +1200,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/JoinGameResponse.java">
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/JoinGameResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
@@ -1195,29 +1210,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/PlayTurnRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#605#606#0" expanded="true" />
-            <element signature="e#636#637#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#749#750#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#810#811#0" expanded="true" />
-            <element signature="e#840#841#0" expanded="true" />
-            <element signature="e#867#868#0" expanded="true" />
-            <element signature="e#893#894#0" expanded="true" />
-            <element signature="e#928#929#0" expanded="true" />
-            <element signature="e#958#959#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Player.java">
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/db/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
@@ -1225,49 +1218,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/PlayTurnResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#770#771#0" expanded="true" />
-            <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#841#842#0" expanded="true" />
-            <element signature="e#877#878#0" expanded="true" />
-            <element signature="e#913#914#0" expanded="true" />
-            <element signature="e#945#946#0" expanded="true" />
-            <element signature="e#996#997#0" expanded="true" />
-            <element signature="e#1038#1039#0" expanded="true" />
-            <element signature="e#1073#1074#0" expanded="true" />
-            <element signature="e#1106#1107#0" expanded="true" />
-            <element signature="e#1156#1157#0" expanded="true" />
-            <element signature="e#1200#1201#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/resources/GameResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#546#547#0" expanded="true" />
-            <element signature="e#673#674#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#1466#1467#0" expanded="true" />
-            <element signature="e#1538#1539#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/helpers/CreateGameRequest.java">
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/CreateGameRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
@@ -1280,38 +1231,120 @@
     <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/GameDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/PlayDAO.java">
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/PlayMoveRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding>
+            <marker date="1437685176000" expanded="true" signature="51:193" placeholder="..." />
+            <marker date="1437685176000" expanded="true" signature="415:423" placeholder="{...}" />
+            <marker date="1437685176000" expanded="true" signature="485:574" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/requests/PlayMoveResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1160#1161#0" expanded="true" />
+            <element signature="e#1204#1205#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/db/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/Game.java">
+    <entry file="file://$PROJECT_DIR$/api/src/main/java/com/glazebrook/tictactoe/db/Move.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+          <caret line="28" column="12" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+          <folding>
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#793#794#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#858#859#0" expanded="true" />
+            <element signature="e#886#887#0" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+            <element signature="e#940#941#0" expanded="true" />
+            <element signature="e#966#967#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="82" column="37" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
+          <folding>
+            <marker date="1437684756000" expanded="true" signature="0:2650" placeholder="databaseChangeLog:" />
+            <marker date="1437684756000" expanded="true" signature="2473:2650" placeholder="changeSet:" />
+            <marker date="1437684756000" expanded="true" signature="2543:2650" placeholder="changes:" />
+            <marker date="1437684756000" expanded="true" signature="2566:2650" placeholder="renameTable:" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/TicTacToeApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/db/MoveDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/resources/GameResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="63" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#466#467#0" expanded="true" />
+            <element signature="e#509#510#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="true" />
+            <element signature="e#914#915#0" expanded="true" />
+            <element signature="e#1462#1463#0" expanded="true" />
+            <element signature="e#1533#1534#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/src/main/java/com/glazebrook/tictactoe/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6832298">
-          <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.6501035">
+          <caret line="108" column="36" selection-start-line="108" selection-start-column="36" selection-end-line="108" selection-end-column="36" />
           <folding>
-            <element signature="e#5576#5577#0" expanded="true" />
-            <element signature="e#5616#5617#0" expanded="true" />
+            <element signature="e#3074#3075#0" expanded="true" />
+            <element signature="e#3122#3123#0" expanded="true" />
+            <element signature="e#5750#5751#0" expanded="true" />
+            <element signature="e#5777#5778#0" expanded="true" />
           </folding>
         </state>
       </provider>

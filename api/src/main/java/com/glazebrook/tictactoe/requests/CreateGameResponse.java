@@ -1,11 +1,11 @@
-package com.glazebrook.tictactoe.helpers;
+package com.glazebrook.tictactoe.requests;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
-public class JoinGameResponse {
+public class CreateGameResponse {
 
     @JsonProperty
     @NotNull
@@ -15,10 +15,10 @@ public class JoinGameResponse {
     @NotNull
     private UUID playerId;
 
-    public JoinGameResponse() {
+    public CreateGameResponse() {
     }
 
-    public JoinGameResponse(UUID gameId, UUID playerId) {
+    public CreateGameResponse(UUID gameId, UUID playerId) {
         this.gameId = gameId;
         this.playerId = playerId;
     }
