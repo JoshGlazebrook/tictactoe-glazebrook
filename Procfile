@@ -1,1 +1,1 @@
-web: $JAVA_OPTS -Ddw.http.port=$PORT -Ddw.http.adminPort=$PORT java -jar application/target/application-1.0.jar db status config.yml --migrations migrations.yml && java $JAVA_OPTS -Ddw.http.port=$PORT -Ddw.http.adminPort=$PORT -jar application/target/application-1.0.jar server config.yml
+web: java $JAVA_OPTS -Ddw.http.port=$PORT -Ddw.http.adminPort=$PORT -jar application/target/application-1.0.jar db status config.yml --migrations migrations.yml && java $JAVA_OPTS -Ddw.http.port=$PORT -Ddw.http.adminPort=$PORT -jar application/target/application-1.0.jar server config.yml
