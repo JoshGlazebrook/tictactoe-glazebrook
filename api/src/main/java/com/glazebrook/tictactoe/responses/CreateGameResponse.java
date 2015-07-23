@@ -1,4 +1,4 @@
-package com.glazebrook.tictactoe.requests;
+package com.glazebrook.tictactoe.responses;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -16,6 +16,7 @@ public class CreateGameResponse {
     private UUID playerId;
 
     public CreateGameResponse() {
+
     }
 
     public CreateGameResponse(UUID gameId, UUID playerId) {

@@ -7,10 +7,8 @@ import io.dropwizard.db.DataSourceFactory;
 
 public class TicTacToeConfiguration extends Configuration {
 
-
     @JsonProperty("database")
     private DataSourceFactory database = new DataSourceFactory();
-
 
     public DataSourceFactory getDataSourceFactory() {
         return database;

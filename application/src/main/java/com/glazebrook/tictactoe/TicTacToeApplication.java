@@ -49,6 +49,5 @@ public class TicTacToeApplication extends Application<TicTacToeConfiguration> {
 
         environment.jersey().register(new GameResource(gameController));
 
-
     }
 }

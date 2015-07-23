@@ -1,5 +1,6 @@
-package com.glazebrook.tictactoe.requests;
+package com.glazebrook.tictactoe.responses;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.glazebrook.tictactoe.db.Move;
 
 import java.util.List;
@@ -13,22 +14,22 @@ public class PlayMoveResponse {
 
     private UUID gameWinner;
 
-    private List<Move> gameBoard;
+    private List<Move> moves;
 
-    public PlayMoveResponse(UUID gameId, boolean gameEnded, UUID gameWinner, List<Move> gameBoard) {
+    public PlayMoveResponse(UUID gameId, boolean gameEnded, UUID gameWinner, List<Move> moves) {
 
         this.gameId = gameId;
         this.gameEnded = gameEnded;
         this.gameWinner = gameWinner;
-        this.gameBoard = gameBoard;
+        this.moves = moves;
     }
 
-    public List<Move> getGameBoard() {
-        return gameBoard;
+    public List<Move> getMoves() {
+        return moves;
     }
 
-    public void setGameBoard(List<Move> gameBoard) {
-        this.gameBoard = gameBoard;
+    public void setMoves(List<Move> moves) {
+        this.moves = moves;
     }
 
     public PlayMoveResponse() {

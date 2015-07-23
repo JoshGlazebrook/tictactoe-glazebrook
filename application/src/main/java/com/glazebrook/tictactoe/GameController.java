@@ -1,14 +1,15 @@
 package com.glazebrook.tictactoe;
 
 import com.glazebrook.tictactoe.db.*;
-import com.glazebrook.tictactoe.requests.CreateGameResponse;
-import com.glazebrook.tictactoe.requests.JoinGameResponse;
+import com.glazebrook.tictactoe.responses.CreateGameResponse;
+import com.glazebrook.tictactoe.responses.JoinGameResponse;
 import com.glazebrook.tictactoe.requests.PlayMoveRequest;
-import com.glazebrook.tictactoe.requests.PlayMoveResponse;
+import com.glazebrook.tictactoe.responses.PlayMoveResponse;
 import org.skife.jdbi.v2.sqlobject.Transaction;
 
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -79,7 +80,7 @@ public class GameController {
             throw new WebApplicationException("Game is already full", Response.Status.BAD_REQUEST);
 
         // Check if this nickname is already in use for this game.
-        for(Player p : game.getPlayers()) {
+        for (Player p : game.getPlayers()) {
             if (p.getName().equals(nickname))
                 throw new WebApplicationException("Nickname is already in use by another player.", Response.Status.BAD_REQUEST);
         }
@@ -108,14 +109,14 @@ public class GameController {
 
         // Check if this game is over
         if (game.isGameEnded())
-            throw new WebApplicationException("Game is already over", Response.Status.BAD_GATEWAY);
+            throw new WebApplicationException("Game is already over", Response.Status.BAD_REQUEST);
 
         // Get players
         game.setPlayers(playerDAO.findPlayers(gameId));
 
         // Check if this player is in this game?
         boolean isInGame = false;
-        for(Player p : game.getPlayers()) {
+        for (Player p : game.getPlayers()) {
             if (p.getId().equals(options.getPlayerId()))
                 isInGame = true;
         }
@@ -132,10 +133,10 @@ public class GameController {
             throw new WebApplicationException("It is not your turn", Response.Status.FORBIDDEN);
 
         // Get board state for this game.
-        final List<Move> plays = moveDAO.findMoves(gameId);
+        final List<Move> moves = moveDAO.findMoves(gameId);
 
         // Is this spot free?
-        for(Move p : plays) {
+        for (Move p : moves) {
             if (p.getCol() == options.getCol() && p.getRow() == options.getRow())
                 throw new WebApplicationException("This spot has already been played on", Response.Status.FORBIDDEN);
         }
@@ -145,19 +146,18 @@ public class GameController {
             throw new WebApplicationException("Unable to save play state", Response.Status.INTERNAL_SERVER_ERROR);
 
         // Add new play to existing list of plays for this game.
-        plays.add(new Move(gameId, options.getPlayerId(), options.getRow(), options.getCol()));
+        moves.add(new Move(gameId, options.getPlayerId(), options.getRow(), options.getCol()));
 
-        // Update last player
-        // TODO: this could be moved down for updating isgameover as well in one go
-        gameDAO.updateGame(gameId, false, null, options.getPlayerId());
+        // Check for a win
+        final boolean playerWon = playerHasWon(moves, options.getPlayerId());
+        final boolean gameEnded = (moves.size() == 9 || playerWon);
+        final UUID gameWinner = (playerWon) ? options.getPlayerId() : null;
 
-        // TODO: check for a win...
+        // Update game
+        gameDAO.updateGame(gameId, gameEnded , gameWinner, options.getPlayerId());
 
-        // TODO: perhaps not return board on this endpoint?  rename play to turn?
-
-        return new PlayMoveResponse(gameId, false, null, plays);
+        return new PlayMoveResponse(gameId, gameEnded, gameWinner, moves);
     }
-
 
 
     public List<Game> getAllGames() {
@@ -165,8 +165,42 @@ public class GameController {
     }
 
 
-    private UUID getWinner(List<Move> board) {
-        return null;
+    private boolean playerHasWon(List<Move> moves, UUID player) {
+        final UUID dummy = UUID.randomUUID();
+        final UUID[][] board = new UUID[3][3];
+
+        // fill board with dummy UUID to avoid null checks below
+        for(int i = 0; i < 3; i++)
+            Arrays.fill(board[i], dummy);
+
+        // Generate Board
+        for (final Move m : moves)
+            board[m.getCol()][m.getRow()] = m.getPlayerId();
+
+        boolean playerWon = false;
+
+        // Check for row winner
+        for (int row = 0; row < 3; row++) {
+            if (board[row][0].equals(player) && board[row][1].equals(player) && board[row][2].equals(player)) {
+                return true;
+            }
+        }
+
+        // Check for col winner
+        for (int col = 0; col < 3; col++) {
+            if (board[0][col].equals(player) && board[1][col].equals(player) && board[2][col].equals(player)) {
+                return true;
+            }
+        }
+
+        // Check for diag winner
+        if (board[1][1].equals(player)) {
+            if ((board[0][0].equals(player) && board[2][2].equals(player)) || (board[0][2].equals(player) && board[2][0].equals(player)))
+                return true;
+        }
+
+
+        return false;
     }
 
 }
