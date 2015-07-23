@@ -1,6 +1,5 @@
 package com.glazebrook.tictactoe.responses;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.glazebrook.tictactoe.db.Move;
 
 import java.util.List;

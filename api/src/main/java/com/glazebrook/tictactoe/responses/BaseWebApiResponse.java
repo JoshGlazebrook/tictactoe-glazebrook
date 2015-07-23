@@ -1,10 +1,6 @@
 package com.glazebrook.tictactoe.responses;
 
-import com.codahale.metrics.MetricRegistryListener;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class BaseWebApiResponse {
     @JsonProperty

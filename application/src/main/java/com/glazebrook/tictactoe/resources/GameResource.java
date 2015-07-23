@@ -1,8 +1,10 @@
 package com.glazebrook.tictactoe.resources;
 
 
-import com.glazebrook.tictactoe.requests.*;
 import com.glazebrook.tictactoe.GameController;
+import com.glazebrook.tictactoe.requests.CreateGameRequest;
+import com.glazebrook.tictactoe.requests.JoinGameRequest;
+import com.glazebrook.tictactoe.requests.PlayMoveRequest;
 import com.glazebrook.tictactoe.responses.BaseWebApiResponse;
 
 import javax.validation.Valid;

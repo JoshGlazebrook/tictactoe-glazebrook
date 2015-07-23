@@ -1,9 +1,9 @@
 package com.glazebrook.tictactoe;
 
 import com.glazebrook.tictactoe.db.*;
+import com.glazebrook.tictactoe.requests.PlayMoveRequest;
 import com.glazebrook.tictactoe.responses.CreateGameResponse;
 import com.glazebrook.tictactoe.responses.JoinGameResponse;
-import com.glazebrook.tictactoe.requests.PlayMoveRequest;
 import com.glazebrook.tictactoe.responses.PlayMoveResponse;
 import org.skife.jdbi.v2.sqlobject.Transaction;
 
@@ -154,7 +154,7 @@ public class GameController {
         final UUID gameWinner = (playerWon) ? options.getPlayerId() : null;
 
         // Update game
-        gameDAO.updateGame(gameId, gameEnded , gameWinner, options.getPlayerId());
+        gameDAO.updateGame(gameId, gameEnded, gameWinner, options.getPlayerId());
 
         return new PlayMoveResponse(gameId, gameEnded, gameWinner, moves);
     }
@@ -170,7 +170,7 @@ public class GameController {
         final UUID[][] board = new UUID[3][3];
 
         // fill board with dummy UUID to avoid null checks below
-        for(int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
             Arrays.fill(board[i], dummy);
 
         // Generate Board

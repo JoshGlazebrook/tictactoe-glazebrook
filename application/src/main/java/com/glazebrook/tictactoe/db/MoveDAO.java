@@ -21,13 +21,11 @@ public interface MoveDAO {
     @SqlQuery("SELECT * FROM moves WHERE gameId=:id")
     List<Move> findMoves(@Bind("id") UUID gameId);
 
-    static final class MoveMapper implements ResultSetMapper<Move>
-    {
-        public Move map(int index, ResultSet r, StatementContext ctx) throws SQLException
-        {
+    static final class MoveMapper implements ResultSetMapper<Move> {
+        public Move map(int index, ResultSet r, StatementContext ctx) throws SQLException {
             return new Move(
-                    (UUID)r.getObject("gameId"),
-                    (UUID)r.getObject("playerId"),
+                    (UUID) r.getObject("gameId"),
+                    (UUID) r.getObject("playerId"),
                     r.getInt("row"),
                     r.getInt("col"));
         }

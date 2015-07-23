@@ -2,13 +2,10 @@ package com.glazebrook.tictactoe.resources.exceptions;
 
 
 import com.glazebrook.tictactoe.responses.BaseWebApiResponse;
-import org.eclipse.jetty.http.HttpStatus;
 
 import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
-import java.util.HashMap;
 
 public class WebApplicationExceptionMapper implements ExceptionMapper<WebApplicationException> {
 

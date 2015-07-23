@@ -28,22 +28,18 @@ public interface GameDAO {
 
     @SqlUpdate("UPDATE games SET gameEnded=:gameEnded, winningPlayerId=:winningPlayerId, lastPlayerId=:lastPlayerId WHERE id=:id")
     int updateGame(@Bind("id") UUID id,
-                    @Bind("gameEnded") boolean gameEnded,
-                    @Bind("winningPlayerId") UUID winningPlayerId,
-                    @Bind("lastPlayerId") UUID lastPlayerId);
+                   @Bind("gameEnded") boolean gameEnded,
+                   @Bind("winningPlayerId") UUID winningPlayerId,
+                   @Bind("lastPlayerId") UUID lastPlayerId);
 
 
-
-
-    static final class GameMapper implements ResultSetMapper<Game>
-    {
-        public Game map(int index, ResultSet r, StatementContext ctx) throws SQLException
-        {
+    static final class GameMapper implements ResultSetMapper<Game> {
+        public Game map(int index, ResultSet r, StatementContext ctx) throws SQLException {
             return new Game(
-                    (UUID)r.getObject("id"),
+                    (UUID) r.getObject("id"),
                     r.getBoolean("gameEnded"),
-                    (UUID)r.getObject("winningPlayerId"),
-                    (UUID)r.getObject("lastPlayerId"));
+                    (UUID) r.getObject("winningPlayerId"),
+                    (UUID) r.getObject("lastPlayerId"));
         }
     }
 }

@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 public class JoinGameRequest {
     @JsonProperty
     @NotNull
-    @Size(min=1, max=40)
+    @Size(min = 1, max = 40)
     private String name;
 
     public JoinGameRequest() {

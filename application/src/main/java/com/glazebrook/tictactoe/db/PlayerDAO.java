@@ -23,14 +23,11 @@ public interface PlayerDAO {
     List<Player> findPlayers(@Bind("id") UUID gameId);
 
 
-
-    static final class PlayerMapper implements ResultSetMapper<Player>
-    {
-        public Player map(int index, ResultSet r, StatementContext ctx) throws SQLException
-        {
+    static final class PlayerMapper implements ResultSetMapper<Player> {
+        public Player map(int index, ResultSet r, StatementContext ctx) throws SQLException {
             return new Player(
-                    (UUID)r.getObject("id"),
-                    (UUID)r.getObject("gameId"),
+                    (UUID) r.getObject("id"),
+                    (UUID) r.getObject("gameId"),
                     r.getString("name"));
         }
     }
