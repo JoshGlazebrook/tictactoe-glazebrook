@@ -218,6 +218,44 @@ Let's assume the following game play has gone on while you were reading the last
 
 It's now player 1's turn again and they can win the game by playing at (0, 2). This would make a winning row at the very top of the tictactoe game board.
 
+For player 1 to know what moves player 2 has made, they can use a special endpoint for retrieving all moves made on a particular game. (/game/:id/moves)
+
+```sh
+$ curl -X "GET" "http://localhost:3000/game/c28477fd-a6a6-4c67-b1e4-58f22ff78044/moves"
+```
+
+```json
+{
+  "error": null,
+  "data": [
+    {
+      "gameId": "e4d48cae-038b-4135-8aad-b7d31e610385",
+      "playerId": "a4965b9a-5b93-4e98-8515-371d8e8764e2",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "gameId": "e4d48cae-038b-4135-8aad-b7d31e610385",
+      "playerId": "a4965b9a-5b93-4e98-8515-371d8e8764e2",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "gameId": "e4d48cae-038b-4135-8aad-b7d31e610385",
+      "playerId": "626a58f3-2a85-402b-9702-3a1367fab586",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "gameId": "e4d48cae-038b-4135-8aad-b7d31e610385",
+      "playerId": "626a58f3-2a85-402b-9702-3a1367fab586",
+      "row": 2,
+      "col": 2
+    }
+  ]
+}
+```
+
 ```sh
 $ curl -X "POST" "http://localhost:3000/game/e4d48cae-038b-4135-8aad-b7d31e610385/move" 
 	-H "Content-Type: application/json" 

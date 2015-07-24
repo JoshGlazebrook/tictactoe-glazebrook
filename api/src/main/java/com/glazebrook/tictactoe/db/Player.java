@@ -18,7 +18,7 @@ public class Player {
     private UUID gameId;
 
     @JsonIgnore
-    @NotNull
+
     private UUID token;
 
 

@@ -1,5 +1,7 @@
 package com.glazebrook.tictactoe.requests;
 
+import org.hibernate.validator.constraints.Range;
+
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -10,14 +12,10 @@ public class PlayMoveRequest {
     @NotNull
     private UUID token;
 
-    @NotNull
-    @Min(0)
-    @Max(2)
+    @Range(min=0, max=2)
     private int row;
 
-    @NotNull
-    @Min(0)
-    @Max(2)
+    @Range(min=0, max=2)
     private int col;
 
     public PlayMoveRequest() {

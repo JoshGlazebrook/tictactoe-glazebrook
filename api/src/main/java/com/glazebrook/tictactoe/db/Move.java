@@ -2,6 +2,7 @@ package com.glazebrook.tictactoe.db;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.validator.constraints.Range;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -18,15 +19,11 @@ public class Move {
     private UUID playerId;
 
     @JsonProperty
-    @Min(0)
-    @Max(2)
-    @NotNull
+    @Range(min=0, max=2)
     private int row;
 
     @JsonProperty
-    @Min(0)
-    @Max(2)
-    @NotNull
+    @Range(min=0, max=2)
     private int col;
 
 
