@@ -38,10 +38,6 @@ public class GameController {
         // Grab players
         game.setPlayers(playerDAO.findPlayers(id));
 
-        // Grab board
-        // TODO: add board?
-
-
         return game;
     }
 
