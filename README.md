@@ -131,7 +131,7 @@ To play your turn, you must know the id of the game you're playing and your secr
 ```sh
 $ curl -X "POST" "http://localhost:3000/game/e4d48cae-038b-4135-8aad-b7d31e610385/move"
   	-H "Content-Type: application/json"
-  	-d '{"token":"8d7a92e7-fc46-41a3-a860-8192c7c9df84","row":"0","col":"0"}'
+  	-d '{"token":"8d7a92e7-fc46-41a3-a860-8192c7c9df84","row":0,"col":0}'
 ```
 
 If successful, the server will respond with the following:
@@ -161,7 +161,7 @@ What would happen if player one tries to play again in another spot?
 ```sh
 $ curl -X "POST" "http://localhost:3000/game/e4d48cae-038b-4135-8aad-b7d31e610385/move"
     	-H "Content-Type: application/json"
-    	-d '{"token":"8d7a92e7-fc46-41a3-a860-8192c7c9df84","row":"0","col":"1"}'
+    	-d '{"token":"8d7a92e7-fc46-41a3-a860-8192c7c9df84","row":0,"col":1}'
 ```
 
 ```json
@@ -178,7 +178,7 @@ Now let's have player 2 player their turn (using their token of course). They wi
 ```sh
 $ curl -X "POST" "http://localhost:3000/game/e4d48cae-038b-4135-8aad-b7d31e610385/move"
   	-H "Content-Type: application/json"
-  	-d '{"token":"07e85526-de09-4a00-bad5-3adbd5eaed70","row":"2","col":"2"}'
+  	-d '{"token":"07e85526-de09-4a00-bad5-3adbd5eaed70","row":2,"col":2}'
 ```
 
 ```json
@@ -221,7 +221,7 @@ It's now player 1's turn again and they can win the game by playing at (0, 2). T
 ```sh
 $ curl -X "POST" "http://localhost:3000/game/e4d48cae-038b-4135-8aad-b7d31e610385/move" 
 	-H "Content-Type: application/json" 
-	-d '{"token":"8d7a92e7-fc46-41a3-a860-8192c7c9df84","row":"0","col":"2"}'
+	-d '{"token":"8d7a92e7-fc46-41a3-a860-8192c7c9df84","row":0,"col":2}'
 ```
 ```json
 {
@@ -313,8 +313,8 @@ To play your turn in a game, you must provide the gameId and your secret token a
 ```json
 {
 	"token": "8d7a92e7-fc46-41a3-a860-8192c7c9df84",
-	"row": "0",
-	"col": "2"
+	"row": 0,
+	"col": 2
 }
 ```
 ```json
