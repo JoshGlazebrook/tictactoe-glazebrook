@@ -7,6 +7,7 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 
+
 public class LoggingErrorExceptionMapper implements ExceptionMapper<WebApplicationException> {
 
     public Response toResponse(final WebApplicationException e) {

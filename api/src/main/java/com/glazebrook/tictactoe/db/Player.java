@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.UUID;
 
 
@@ -43,7 +42,9 @@ public class Player {
         return gameId;
     }
 
-    public UUID getToken() { return token; }
+    public UUID getToken() {
+        return token;
+    }
 
     public void setId(UUID id) {
         this.id = id;

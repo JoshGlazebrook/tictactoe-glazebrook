@@ -92,6 +92,7 @@ public class GameController {
         return moveDAO.findMoves(gameId);
     }
 
+
     @Transaction
     public PlayMoveResponse playMove(UUID gameId, PlayMoveRequest options) {
         final Game game = gameDAO.findGameById(gameId);
@@ -158,6 +159,9 @@ public class GameController {
     }
 
 
+    /**
+     * Determines if a given player has won a game based on the given moves.
+     */
     private boolean playerHasWon(List<Move> moves, UUID player) {
         final UUID dummy = UUID.randomUUID();
         final UUID[][] board = new UUID[3][3];

@@ -14,7 +14,7 @@ public class PlayMoveResponse {
 
     private UUID gameWinner;
 
-    @JsonIgnoreProperties({ "token" })
+    @JsonIgnoreProperties({"token"})
     private List<Move> moves;
 
     public PlayMoveResponse(UUID gameId, boolean gameEnded, UUID gameWinner, List<Move> moves) {
