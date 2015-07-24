@@ -213,6 +213,7 @@ To win a game of tictactoe you must get three plays in a row either horizontally
 Let's assume the following game play has gone on while you were reading the last sentence.
 
 > Player 1: (0, 1)
+
 > Player 2: (2, 1)
 
 It's now player 1's turn again and they can win the game by playing at (0, 2). This would make a winning row at the very top of the tictactoe game board.
