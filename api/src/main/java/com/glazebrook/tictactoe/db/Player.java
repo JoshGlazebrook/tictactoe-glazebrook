@@ -1,14 +1,13 @@
 package com.glazebrook.tictactoe.db;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.UUID;
 
-/**
- * Created by Josh on 7/15/15.
- */
+
 public class Player {
 
     @JsonProperty
@@ -19,20 +18,19 @@ public class Player {
     @NotNull
     private UUID gameId;
 
-    @JsonProperty
+    @JsonIgnore
     @NotNull
-    @Size(min = 1, max = 40)
-    private String name;
+    private UUID token;
 
 
     public Player() {
 
     }
 
-    public Player(UUID id, UUID gameId, String name) {
+    public Player(UUID id, UUID gameId, UUID token) {
         this.id = id;
         this.gameId = gameId;
-        this.name = name;
+        this.token = token;
     }
 
 
@@ -45,8 +43,17 @@ public class Player {
         return gameId;
     }
 
+    public UUID getToken() { return token; }
 
-    public String getName() {
-        return name;
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public void setGameId(UUID gameId) {
+        this.gameId = gameId;
+    }
+
+    public void setToken(UUID token) {
+        this.token = token;
     }
 }

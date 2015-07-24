@@ -13,15 +13,15 @@ public class CreateGameResponse {
 
     @JsonProperty
     @NotNull
-    private UUID playerId;
+    private UUID token;
 
     public CreateGameResponse() {
 
     }
 
-    public CreateGameResponse(UUID gameId, UUID playerId) {
+    public CreateGameResponse(UUID gameId, UUID token) {
         this.gameId = gameId;
-        this.playerId = playerId;
+        this.token = token;
     }
 
     public UUID getGameId() {
@@ -32,11 +32,11 @@ public class CreateGameResponse {
         this.gameId = gameId;
     }
 
-    public UUID getPlayerId() {
-        return playerId;
+    public UUID getToken() {
+        return token;
     }
 
-    public void setPlayerId(UUID playerId) {
-        this.playerId = playerId;
+    public void setToken(UUID playerId) {
+        this.token = playerId;
     }
 }

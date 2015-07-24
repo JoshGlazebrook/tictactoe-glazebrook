@@ -56,6 +56,21 @@ public class Move {
         return row;
     }
 
+    public void setGameId(UUID gameId) {
+        this.gameId = gameId;
+    }
+
+    public void setPlayerId(UUID playerId) {
+        this.playerId = playerId;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public void setCol(int col) {
+        this.col = col;
+    }
 
     public int getCol() {
         return col;

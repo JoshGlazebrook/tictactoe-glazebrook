@@ -2,8 +2,6 @@ package com.glazebrook.tictactoe.resources;
 
 
 import com.glazebrook.tictactoe.GameController;
-import com.glazebrook.tictactoe.requests.CreateGameRequest;
-import com.glazebrook.tictactoe.requests.JoinGameRequest;
 import com.glazebrook.tictactoe.requests.PlayMoveRequest;
 import com.glazebrook.tictactoe.responses.BaseWebApiResponse;
 
@@ -24,9 +22,8 @@ public class GameResource {
     }
 
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response createGame(@Valid CreateGameRequest options) {
-        return Response.ok(new BaseWebApiResponse(gameController.createGame(options.getName()))).build();
+    public Response createGame() {
+        return Response.ok(new BaseWebApiResponse(gameController.createGame())).build();
     }
 
     @GET
@@ -40,8 +37,8 @@ public class GameResource {
     @POST
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response joinGame(@PathParam("id") UUID id, @Valid JoinGameRequest options) {
-        return Response.ok(new BaseWebApiResponse(gameController.joinGame(id, options.getName()))).build();
+    public Response joinGame(@PathParam("id") UUID id) {
+        return Response.ok(new BaseWebApiResponse(gameController.joinGame(id))).build();
     }
 
     @POST

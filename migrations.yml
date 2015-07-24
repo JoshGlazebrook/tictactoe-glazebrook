@@ -32,7 +32,7 @@ databaseChangeLog:
         author: joshglazebrook
         changes:
           - createTable:
-              tableName: plays
+              tableName: moves
               columns:
                 - column:
                     name: gameId
@@ -79,14 +79,7 @@ databaseChangeLog:
                         primaryKey: true
                         nullable: false
                   - column:
-                      name: name
-                      type: varchar(40)
+                      name: token
+                      type: UUID
                       constraints:
                         nullable: false
-  - changeSet:
-          id: 4
-          author: joshlgazebrook
-          changes:
-            - renameTable:
-                oldTableName: plays
-                newTableName: moves

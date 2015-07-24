@@ -21,6 +21,18 @@ public class Game {
     @JsonProperty
     private UUID lastPlayerId;
 
+
+    public Game() {
+
+    }
+
+    public Game(UUID id, boolean gameEnded, UUID winningPlayerId, UUID lastPlayerId) {
+        this.id = id;
+        this.gameEnded = gameEnded;
+        this.winningPlayerId = winningPlayerId;
+        this.lastPlayerId = lastPlayerId;
+    }
+
     public List<Player> getPlayers() {
         return players;
     }
@@ -31,37 +43,20 @@ public class Game {
 
     private List<Player> players;
 
-    public Game() {
-
-    }
-
-
-    public Game(UUID id, boolean gameEnded, UUID winningPlayerId, UUID lastPlayerId) {
-        this.id = id;
-        this.gameEnded = gameEnded;
-        this.winningPlayerId = winningPlayerId;
-        this.lastPlayerId = lastPlayerId;
-    }
-
-
     public UUID getId() {
         return id;
     }
-
 
     public boolean isGameEnded() {
         return gameEnded;
     }
 
-
     public UUID getWinningPlayerId() {
         return winningPlayerId;
     }
 
-
     public UUID getLastPlayerId() {
         return lastPlayerId;
     }
-
 
 }

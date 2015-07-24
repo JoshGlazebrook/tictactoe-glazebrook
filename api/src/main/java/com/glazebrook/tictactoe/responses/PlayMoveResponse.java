@@ -1,5 +1,6 @@
 package com.glazebrook.tictactoe.responses;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.glazebrook.tictactoe.db.Move;
 
 import java.util.List;
@@ -13,6 +14,7 @@ public class PlayMoveResponse {
 
     private UUID gameWinner;
 
+    @JsonIgnoreProperties({ "token" })
     private List<Move> moves;
 
     public PlayMoveResponse(UUID gameId, boolean gameEnded, UUID gameWinner, List<Move> moves) {

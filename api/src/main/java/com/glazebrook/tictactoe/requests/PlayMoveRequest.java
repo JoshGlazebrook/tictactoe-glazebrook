@@ -8,7 +8,7 @@ import java.util.UUID;
 public class PlayMoveRequest {
 
     @NotNull
-    private UUID playerId;
+    private UUID token;
 
     @NotNull
     @Min(0)
@@ -24,18 +24,18 @@ public class PlayMoveRequest {
 
     }
 
-    public PlayMoveRequest(UUID playerId, int row, int col) {
-        this.playerId = playerId;
+    public PlayMoveRequest(UUID token, int row, int col) {
+        this.token = token;
         this.row = row;
         this.col = col;
     }
 
-    public UUID getPlayerId() {
-        return playerId;
+    public UUID getToken() {
+        return token;
     }
 
-    public void setPlayerId(UUID playerId) {
-        this.playerId = playerId;
+    public void setToken(UUID token) {
+        this.token = token;
     }
 
     public int getRow() {

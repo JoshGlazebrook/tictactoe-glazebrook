@@ -42,26 +42,27 @@ public class GameController {
     }
 
     @Transaction
-    public CreateGameResponse createGame(final String nickname) {
+    public CreateGameResponse createGame() {
 
         // Generate uuid
         final UUID gameId = UUID.randomUUID();
         final UUID playerId = UUID.randomUUID();
+        final UUID token = UUID.randomUUID();
 
         // Create Game
         if (gameDAO.createGame(gameId) != 1)
             throw new WebApplicationException("Unable to create game", Response.Status.INTERNAL_SERVER_ERROR);
 
         // Create Player
-        if (playerDAO.createPlayer(playerId, gameId, nickname) != 1)
+        if (playerDAO.createPlayer(playerId, gameId, token) != 1)
             throw new WebApplicationException("Unable to create game", Response.Status.INTERNAL_SERVER_ERROR);
 
 
-        return new CreateGameResponse(gameId, playerId);
+        return new CreateGameResponse(gameId, token);
     }
 
     @Transaction
-    public JoinGameResponse joinGame(final UUID gameId, String nickname) {
+    public JoinGameResponse joinGame(final UUID gameId) {
         final Game game = gameDAO.findGameById(gameId);
 
         // Game doesn't exist?
@@ -75,19 +76,15 @@ public class GameController {
         if (game.getPlayers().size() == 2)
             throw new WebApplicationException("Game is already full", Response.Status.BAD_REQUEST);
 
-        // Check if this nickname is already in use for this game.
-        for (Player p : game.getPlayers()) {
-            if (p.getName().equals(nickname))
-                throw new WebApplicationException("Nickname is already in use by another player.", Response.Status.BAD_REQUEST);
-        }
-
         // Create player
         final UUID playerId = UUID.randomUUID();
-        if (playerDAO.createPlayer(playerId, gameId, nickname) != 1)
+        final UUID token = UUID.randomUUID();
+
+        if (playerDAO.createPlayer(playerId, gameId, token) != 1)
             throw new WebApplicationException("Unable to join game", Response.Status.INTERNAL_SERVER_ERROR);
 
 
-        return new JoinGameResponse(gameId, playerId);
+        return new JoinGameResponse(gameId, token);
 
     }
 
@@ -111,21 +108,21 @@ public class GameController {
         game.setPlayers(playerDAO.findPlayers(gameId));
 
         // Check if this player is in this game?
-        boolean isInGame = false;
+        UUID playerId = null;
         for (Player p : game.getPlayers()) {
-            if (p.getId().equals(options.getPlayerId()))
-                isInGame = true;
+            if (p.getToken().equals(options.getToken()))
+                playerId = p.getId();
         }
 
-        if (!isInGame)
-            throw new WebApplicationException("Invalid player id", Response.Status.UNAUTHORIZED);
+        if (playerId == null)
+            throw new WebApplicationException("Invalid token", Response.Status.UNAUTHORIZED);
 
         // Has this game even started?
         if (game.getPlayers().size() != 2)
             throw new WebApplicationException("Game has not started", Response.Status.BAD_REQUEST);
 
         // Is it this player's turn?
-        if (game.getLastPlayerId() != null && game.getLastPlayerId().equals(options.getPlayerId()))
+        if (game.getLastPlayerId() != null && game.getLastPlayerId().equals(playerId))
             throw new WebApplicationException("It is not your turn", Response.Status.FORBIDDEN);
 
         // Get board state for this game.
@@ -138,19 +135,19 @@ public class GameController {
         }
 
         // Mark this spot for player.
-        if (moveDAO.createMove(gameId, options.getPlayerId(), options.getRow(), options.getCol()) != 1)
+        if (moveDAO.createMove(gameId, playerId, options.getRow(), options.getCol()) != 1)
             throw new WebApplicationException("Unable to save play state", Response.Status.INTERNAL_SERVER_ERROR);
 
         // Add new play to existing list of plays for this game.
-        moves.add(new Move(gameId, options.getPlayerId(), options.getRow(), options.getCol()));
+        moves.add(new Move(gameId, playerId, options.getRow(), options.getCol()));
 
         // Check for a win
-        final boolean playerWon = playerHasWon(moves, options.getPlayerId());
+        final boolean playerWon = playerHasWon(moves, playerId);
         final boolean gameEnded = (moves.size() == 9 || playerWon);
-        final UUID gameWinner = (playerWon) ? options.getPlayerId() : null;
+        final UUID gameWinner = (playerWon) ? playerId : null;
 
         // Update game
-        gameDAO.updateGame(gameId, gameEnded, gameWinner, options.getPlayerId());
+        gameDAO.updateGame(gameId, gameEnded, gameWinner, playerId);
 
         return new PlayMoveResponse(gameId, gameEnded, gameWinner, moves);
     }

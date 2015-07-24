@@ -16,8 +16,8 @@ import java.util.UUID;
 @RegisterMapper(PlayerDAO.PlayerMapper.class)
 public interface PlayerDAO {
 
-    @SqlUpdate("INSERT INTO players (id, gameId, name) VALUES (:id, :gameId, :name)")
-    int createPlayer(@Bind("id") UUID id, @Bind("gameId") UUID gameId, @Bind("name") String name);
+    @SqlUpdate("INSERT INTO players (id, gameId, token) VALUES (:id, :gameId, :token)")
+    int createPlayer(@Bind("id") UUID id, @Bind("gameId") UUID gameId, @Bind("token") UUID token);
 
     @SqlQuery("SELECT * FROM players WHERE gameId=:id")
     List<Player> findPlayers(@Bind("id") UUID gameId);
@@ -28,7 +28,7 @@ public interface PlayerDAO {
             return new Player(
                     (UUID) r.getObject("id"),
                     (UUID) r.getObject("gameId"),
-                    r.getString("name"));
+                    (UUID) r.getObject("token"));
         }
     }
 }
