@@ -58,7 +58,7 @@ public class GameController {
             throw new WebApplicationException("Unable to create game", Response.Status.INTERNAL_SERVER_ERROR);
 
 
-        return new CreateGameResponse(gameId, token);
+        return new CreateGameResponse(gameId, playerId, token);
     }
 
     @Transaction
@@ -84,7 +84,7 @@ public class GameController {
             throw new WebApplicationException("Unable to join game", Response.Status.INTERNAL_SERVER_ERROR);
 
 
-        return new JoinGameResponse(gameId, token);
+        return new JoinGameResponse(gameId, playerId, token);
 
     }
 

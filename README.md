@@ -90,7 +90,7 @@ If successful, the server will respond with the id of the game and your player t
   "error": null,
   "data": {
     "gameId": "e4d48cae-038b-4135-8aad-b7d31e610385",
-    "playerId", "a4965b9a-5b93-4e98-8515-371d8e8764e2"
+    "playerId": "a4965b9a-5b93-4e98-8515-371d8e8764e2",
     "token": "8d7a92e7-fc46-41a3-a860-8192c7c9df84"
   }
 }
@@ -103,7 +103,7 @@ Notice the data we want is wrapped in a generic JSON response format. When an er
 
 To join a game you are going to need to know the id of the game! You can get that from the person who created the game.
 
-Joining a game works almost exactly like creating a game, just you're POSTing to a different endpoint /game/{gameId}.
+Joining a game works almost exactly like creating a game, just you're POSTing to a different endpoint /game/:id.
 
 ```sh
 $ curl -X "POST" "http://localhost:3000/game/e4d48cae-038b-4135-8aad-b7d31e610385"
@@ -116,7 +116,7 @@ If successful, the server will return a response containing the id of the game, 
   "error": null,
   "data": {
     "gameId": "e4d48cae-038b-4135-8aad-b7d31e610385",
-    "playerId": "",
+    "playerId": "626a58f3-2a85-402b-9702-3a1367fab586",
     "token": "07e85526-de09-4a00-bad5-3adbd5eaed70"
   }
 }
@@ -173,7 +173,7 @@ $ curl -X "POST" "http://localhost:3000/game/e4d48cae-038b-4135-8aad-b7d31e61038
 
 Uh oh! Guess there won't be any cheating!
 
-Now let's have player 2 player their turn (using their token of course). They wish to play in (2, 2)
+Now let's have player 2 player their turn (using their token of course). They wish to play at (2, 2).
 
 ```sh
 $ curl -X "POST" "http://localhost:3000/game/e4d48cae-038b-4135-8aad-b7d31e610385/move"
@@ -282,6 +282,7 @@ Creates new game and returns gameId, playerId, token for player 1.
   "error": null,
   "data": {
     "gameId": "e4d48cae-038b-4135-8aad-b7d31e610385",
+    "playerId": "a4965b9a-5b93-4e98-8515-371d8e8764e2",
     "token": "8d7a92e7-fc46-41a3-a860-8192c7c9df84"
   }
 }
@@ -297,6 +298,7 @@ Joins the provided game based on its id, and returns the gameId, playerId, token
   "error": null,
   "data": {
     "gameId": "e4d48cae-038b-4135-8aad-b7d31e610385",
+    "playerId": "626a58f3-2a85-402b-9702-3a1367fab586",
     "token": "07e85526-de09-4a00-bad5-3adbd5eaed70"
   }
 }

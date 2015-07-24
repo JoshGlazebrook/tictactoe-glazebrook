@@ -13,13 +13,19 @@ public class JoinGameResponse {
 
     @JsonProperty
     @NotNull
+    private UUID playerId;
+
+    @JsonProperty
+    @NotNull
     private UUID token;
 
     public JoinGameResponse() {
     }
 
-    public JoinGameResponse(UUID gameId, UUID token) {
+    public JoinGameResponse(UUID gameId, UUID playerId, UUID token) {
         this.gameId = gameId;
+        this.playerId = playerId;
+
         this.token = token;
     }
 
@@ -37,5 +43,13 @@ public class JoinGameResponse {
 
     public void setToken(UUID token) {
         this.token = token;
+    }
+
+    public UUID getPlayerId() {
+        return playerId;
+    }
+
+    public void setPlayerId(UUID playerId) {
+        this.playerId = playerId;
     }
 }
