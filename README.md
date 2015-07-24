@@ -216,7 +216,6 @@ Let's assume the following game play has gone on while you were reading the last
 
 > Player 2: (2, 1)
 
-It's now player 1's turn again and they can win the game by playing at (0, 2). This would make a winning row at the very top of the tictactoe game board.
 
 For player 1 to know what moves player 2 has made, they can use a special endpoint for retrieving all moves made on a particular game. (/game/:id/moves)
 
@@ -255,6 +254,8 @@ $ curl -X "GET" "http://localhost:3000/game/c28477fd-a6a6-4c67-b1e4-58f22ff78044
   ]
 }
 ```
+
+It's now player 1's turn again and now they know can win the game by playing at (0, 2). This would make a winning row at the very top of the tictactoe game board.
 
 ```sh
 $ curl -X "POST" "http://localhost:3000/game/e4d48cae-038b-4135-8aad-b7d31e610385/move" 
